@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by AnikoBorosova (http://jsbin.com/mehuvom/19/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+  <meta name="description" content="Bootstrap - BirdFinder">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cairo:400,900&#124;Dosis:400,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>BirdFinder</title>
+<style id="jsbin-css">
+/* === GENERAL === */
+
+h1,h2,h3,
+ul,
+p,
+img, .btn, .content {
+    margin-bottom: 1rem;
+}
+
+body {
+  font-family: Dosis, sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+h2, h3 {
+  text-transform: uppercase;
+}
+
+/* === HEADER === */
+
+header {
+  padding: 15px;
+	background-color: #42444e;
+}
+
+.headline {
+  color: #fff;
+  padding: 0;
+  margin: auto 0;
+}
+
+.headline h1 {
+  margin-bottom: 20px;
+  padding: 0;
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 46px;
+  text-shadow: 3px 3px 1px black;
+}
+
+.nav {
+  margin: 5px auto;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+
+  .nav {
+    padding: 25px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .nav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}
+
+nav .btn {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 0 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+
+  nav .btn {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+    nav .btn {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+nav .btn:hover {
+  text-decoration: none;
+  color: #ffff33;
+  transition: color .3s ease-in-out;
+}
+
+/* === JUMBOTRON === */
+
+.jumbotron {
+  background: url('https://i.imgur.com/8Gko3O4.jpg') no-repeat 70% center/cover;
+  height: 78vh;
+  width: 100%;
+  color: hsla(0,0%,100%,.7);
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+
+  .jumbotron {
+    height: 92vh;
+  }
+}
+
+.text-box {
+  background-color: hsla(100,0%,0%,.6);
+  color: #fff;
+}
+
+.text h2 {
+  font-weight: 700;
+}
+
+.text h3 {
+  color: #ffff33;
+}
+
+.jumbotron .btn {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  text-transform: uppercase;
+
+}
+
+.jumbotron .btn:hover {
+  color: #ffff33;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+}
+
+/* === CONTENT === */
+
+.content {
+  padding: 0;
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+
+  .content {
+    padding: 15px;
+  }
+
+  .content img {
+    width: 450px;
+    height: 250px;
+  }
+
+  .landscape {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .content {
+    padding: 15px;
+  }
+
+  .content img {
+    width: 500px;
+    height: 300px;
+  }
+
+  .landscape {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  .content {
+    padding: 30px;
+  }
+
+  .content img {
+    height: 400px;
+    width: 600px;
+  }
+
+  .landscape {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .content {
+    padding: 30px;
+  }
+
+  .content img {
+    height: 450px;
+    width: 700px;
+  }
+
+  .landscape {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.content .btn {
+  color: #e5127d;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.content .btn:hover {
+  color: #b60e63;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+}
+
+/* === NEXT PAGE === */
+
+.next-page .btn {
+  color: #e5127d;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 1rem;
+  font-size: 20px;
+}
+
+.next-page .btn:hover {
+  color: #b60e63;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+}
+
+/* === FOOTER === */
+
+footer {
+  background-color: #42444e;
+  color: #fff;
+}
+
+.media p, .media li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  margin: 0 auto;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #ffff33;
+  transition: color .3s ease-in-out;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="container-fluid">
+    <div class="headline row">
+      <h1 class="col-xs-12 text-center col-sm-4 text-left">BirdFinder</h1>
+      <nav class="nav col-xs-12 text-center col-sm-8 text-right">
+        <a class="btn btn-link btn-md" href="#">Home</a>
+        <a class="btn btn-link btn-md" href="#">Our Mission</a>
+        <a class="btn btn-link btn-md" href="#">Contact</a>
+        <a class="btn btn-link btn-md" href="#">Search <span class="glyphicon glyphicon-search"></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- JUMBOTRON -->
+
+  <div class="jumbotron">
+    <div class="wrapper container-fluid">
+      <div class="text row text-center">
+        <div class="text-box col-xs-12 text-center col-sm-8 col-sm-offset-2 text-center">
+          <h2>Watch the owls hatch!</h2>
+          <h3>Try out our brand new bird cam!</h3>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, sapien et posuere consequat, ante lorem aliquet lacus, a vehicula nulla dolor eget nulla.</p>
+          <a class="btn btn-link btn-md" href="#">Click here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTHER CONTENT -->
+
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="content col-sm-6">
+        <div class="landscape">
+          <img src="http://i.imgur.com/baVA3Vn.jpg" alt="Robin" class="img-responsive img-rounded">
+        </div>
+        <h3>American Robin</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, sapien et posuere consequat, ante lorem aliquet lacus, a vehicula nulla dolor eget nulla.</p>
+        <a class="btn btn-link btn-md" href="#">Read more</a>
+      </div>
+      <div class="content col-sm-6">
+        <div class="landscape">
+          <img src="http://i.imgur.com/mhLUSot.jpg" alt="tit bird" class="img-responsive img-rounded">
+        </div>
+        <h3>Tit bird</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, sapien et posuere consequat, ante lorem aliquet lacus, a vehicula nulla dolor eget nulla.</p>
+        <a class="btn btn-link btn-md" href="#">Read more</a>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="content col-sm-6">
+        <div class="landscape">
+          <img src="http://i.imgur.com/GZWrVBe.png" alt="grey heron" class="img-responsive img-rounded">
+        </div>
+        <h3>Grey Heron</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, sapien et posuere consequat, ante lorem aliquet lacus, a vehicula nulla dolor eget nulla.</p>
+        <a class="btn btn-link btn-md" href="#">Read more</a>
+      </div>
+      <div class="content col-sm-6">
+        <div class="landscape">
+          <img src="http://i.imgur.com/K1H9our.jpg" alt="goldfinch" class="img-responsive img-rounded">
+        </div>
+        <h3>Goldfinch</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia, sapien et posuere consequat, ante lorem aliquet lacus, a vehicula nulla dolor eget nulla.</p>
+        <a class="btn btn-link btn-md" href="#">Read more</a>
+      </div>
+    </div>
+
+    <!-- NEXT PAGE -->
+
+    <div class="row text-center">
+      <div class="next-page">
+        <a class="btn btn-link btn-md" href="#">More birds <span class="glyphicon glyphicon-arrow-right"> </span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer class="container-fluid">
+    <div class="row text-center">
+      <div class="media col-xs-4 col-xs-offset-4 col-md-4 col-md-offset-4">
+        <p>Follow us:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <ul class="media list-unstyled list-inline text-center">
+          <li><a href="https://twitter.com/#" title="Twitter"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://instagram.com/#" title="Instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://tumblr.com/#" title="Facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
